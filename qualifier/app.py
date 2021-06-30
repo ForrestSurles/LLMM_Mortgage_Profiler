@@ -116,13 +116,12 @@ def save_qualifying_loans(qualifying_loans):
     Returns:
         Nothing.
     """
-    if questionary.text("Would you like to save the results as a csv?").confirm().ask():
+    if questionary.confirm("Would you like to save the results as a csv?").ask():
         csvpath = questionary.path(
-            message="Select the path to the desired save directory:",
+            message="Provide a path to the desired save directory:",
             only_directories=True,
-            validate=Path.exists()
             ).ask()
-        save_csv(csvpath, qualifying_loans, ['Lender', 'Max Loan Amount', 'Max LTV', 'Max DTI', 'Min Credit Score', 'Interest Rate'])
+        save_csv(csvpath, qualifying_loans)
     else:
         # alright, proceed...
         print(f"The data was not saved.")
