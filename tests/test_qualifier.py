@@ -41,6 +41,7 @@ def test_calculate_monthly_debt_ratio():
 def test_calculate_loan_to_value_ratio():
     assert calculate_loan_to_value_ratio(210000, 250000) == 0.84
 
+# test to make sure all of the filters work together
 def test_filter_scenario():
     bank_data = load_csv(Path('data\daily_rate_sheet.csv'))
     current_credit_score = 750
@@ -65,6 +66,11 @@ def test_filter_scenario():
 
     assert qualifying_loans == compare_against
 
+# ========================================================
+# ~~~~~~~~~~~~~~~~~~ BONUS - EXTENSION ~~~~~~~~~~~~~~~~~~~
+# ========================================================
+
+# test each of the filters in succession simulating the output of each stage
 def test_all_filters():
     bank_data = load_csv(Path('data\daily_rate_sheet.csv'))
     current_credit_score = 750
