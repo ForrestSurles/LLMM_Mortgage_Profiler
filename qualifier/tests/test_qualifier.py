@@ -1,39 +1,41 @@
 # Import pathlib
 from pathlib import Path
-from qualifier.app import find_qualifying_loans, save_qualifying_loans
+from app import find_qualifying_loans, save_qualifying_loans
 
 #Import fileio
-from qualifier.utils import fileio
+from qualifier.utils.fileio import *
+#from qualifier.utils.fileio import load_csv, save_csv
 
 # Import Calculators
-from qualifier.utils import calculators
+from qualifier.utils.calculators import *
+#from qualifier.utils.calculators import calculate_monthly_debt_ratio, calculate_loan_to_value_ratio
 
 # Import Filters
-from qualifier.filters import credit_score
-from qualifier.filters import debt_to_income
-from qualifier.filters import loan_to_value
-from qualifier.filters import max_loan_size
+#from qualifier.filters import *
+
+from qualifier.filters.credit_score import filter_credit_score
+from qualifier.filters.debt_to_income import filter_debt_to_income
+from qualifier.filters.loan_to_value import filter_loan_to_value
+from qualifier.filters.max_loan_size import filter_max_loan_size
+
 
 def test_save_csv():
     # Use Path from pathlib to output the test csv to ./data/output/qualifying_loans.csv
-    csvpath = Path('./data/output/test_output.csv')
-    test_data = []
-    for i in range(10):
-        test_data.append(i)
-    header = []
-    for i in range(9,-1,-1):
-        header.append(i)
-    file.io.save_csv(csvpath, test_data, header)
+    csvpath = Path('..\data\output\output_data.csv')
+    test_data = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+    save_csv(csvpath, test_data)
     assert csvpath.exists() == True
 
 def test_calculate_monthly_debt_ratio():
-    assert calculators.calculate_monthly_debt_ratio(1500, 4000) == 0.375
+    assert calculate_monthly_debt_ratio(1500, 4000) == 0.375
 
 def test_calculate_loan_to_value_ratio():
-    assert calculators.calculate_loan_to_value_ratio(210000, 250000) == 0.84
+    assert calculate_loan_to_value_ratio(210000, 250000) == 0.84
 
+'''
 def test_filters():
-    bank_data = fileio.load_csv(Path('./data/daily_rate_sheet.csv'))
+    bank_data = load_csv(Path('data\daily_rate_sheet.csv'))
     current_credit_score = 750
     debt = 1500
     income = 4000
@@ -46,3 +48,4 @@ def test_filters():
 
     # @TODO: Test the new save_csv code!
     # YOUR CODE HERE!
+'''
