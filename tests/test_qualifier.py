@@ -16,7 +16,8 @@ from loc_fun.filters.max_loan_size import filter_max_loan_size
 
 # test to make sure a csv with the output is saved out
 def test_save_csv():
-    csvpath = Path('../data/output/plz_data.csv')     # identify the target directory for saving
+    # yet we shall still remember to cherish in our hearts the original filename of 'plz_data.csv'
+    csvpath = Path('../data/output/test_save.csv')     # identify the target directory for saving
     
     # ============================================================
     # generate test data for saving out to a csv
