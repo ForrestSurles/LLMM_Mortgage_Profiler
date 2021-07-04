@@ -1,3 +1,14 @@
+"""
+==========================================================================================
+VITAL NOTE: to everyone else, and me in 6 months.
+==========================================================================================
+WHERE YOU RUN 'pytest' FROM WILL MAKE OR BREAK THESE TESTS
+SO BE SURE TO HAVE YOUR CURRENT WORKING DIRECTORY BE THE 'tests' SUB-FOLDER
+THAT'S LOCATED IN THE 'challenge' PARENT FOLDER.
+OTHERWISE, YOU'RE GONNA HAVE A BAD TIME.
+==========================================================================================
+"""
+
 # Import from the 'pathlib' library, and the main 'app.py'
 from pathlib import Path
 from app import find_qualifying_loans, save_qualifying_loans
