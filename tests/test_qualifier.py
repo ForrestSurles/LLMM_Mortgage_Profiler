@@ -84,7 +84,13 @@ def test_filter_scenario():
 
 # test each of the filters in succession simulating the output of each stage
 def test_all_filters():
+    # load the list of bank loans
     bank_data = load_csv(Path('data\daily_rate_sheet.csv'))
+    
+    # ========================================
+    # ======= DATA WITH A KNOWN OUTPUT =======
+    # ========================================
+
     current_credit_score = 750
     debt = 1500
     income = 4000
@@ -93,6 +99,10 @@ def test_all_filters():
 
     monthly_debt_ratio = 0.375
     loan_to_value_ratio = 0.84
+
+    # ========================================
+    # ==== GENERATE LIST OF KNOWN OUTPUT =====
+    # ========================================
 
     compare_against = []
     compare_against.append(['Bank of Big - Premier Option','300000','0.85','0.47','740','3.6'])
@@ -118,7 +128,7 @@ def test_all_filters():
     qualifying_loans = filter_max_loan_size(loan,bank_data)
     assert qualifying_loans == compare_against
 
-    # test that filter_credit_score works as expected
+    # modify generated list of known output to match/check filter_credit_score works as expected
     compare_against.remove(['West Central Credit Union - Premier Option','400000','0.9','0.35','760','2.7'])
     compare_against.remove(['Goldman MBS - Premier Option','500000','0.8','0.4','770','3.6'])
     compare_against.remove(['Developers Credit Union - Premier Option','300000','0.85','0.47','770','3.45'])
@@ -129,19 +139,21 @@ def test_all_filters():
     compare_against.remove(['General MBS Partners - Premier Option','400000','0.95','0.35','790','3.0'])
     compare_against.remove(['Bank of Stodge & Stiff - Premier Option','500000','0.9','0.41','790','3.15'])
 
-
+    # test that filter_credit_score works as expected
     qualifying_loans = filter_credit_score(current_credit_score, qualifying_loans)
     assert qualifying_loans == compare_against
 
-    # test that filter_debt_to_income works as expected
+    # modify generated list of known output to match/check filter_debt_to_income works as expected
     compare_against.remove(['General MBS Partners - Starter Plus','300000','0.85','0.36','670','4.05'])
 
+    # test that filter_debt_to_income works as expected
     qualifying_loans = filter_debt_to_income(monthly_debt_ratio, qualifying_loans)
     assert qualifying_loans == compare_against
 
-    # test that filter_loan_to_value works as expected
+    # modify generated list of known output to match/check filter_loan_to_value works as expected
     compare_against.remove(['West Central Credit Union - Starter Plus','300000','0.8','0.44','650','3.9'])
     compare_against.remove(['Citi MBS - Starter Plus','300000','0.8','0.39','740','4.05'])
 
+    # test that filter_loan_to_value works as expected
     qualifying_loans = filter_loan_to_value(loan_to_value_ratio, qualifying_loans)
     assert qualifying_loans == compare_against
