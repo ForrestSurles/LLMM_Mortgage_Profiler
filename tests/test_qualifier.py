@@ -16,8 +16,7 @@ from loc_fun.filters.max_loan_size import filter_max_loan_size
 
 # test to make sure a csv with the output is saved out
 def test_save_csv():
-    
-    csvpath = Path('.\data\output\output_data.csv')     # identify the target directory for saving
+    csvpath = Path('../data/output/plz_data.csv')     # identify the target directory for saving
     
     # ============================================================
     # generate test data for saving out to a csv
@@ -44,7 +43,7 @@ def test_calculate_loan_to_value_ratio():
 # test to make sure all of the filters work together
 def test_filter_scenario():
     # load the list of bank loans
-    bank_data = load_csv(Path('data\daily_rate_sheet.csv'))
+    bank_data = load_csv(Path('../data/daily_rate_sheet.csv'))
     
     # ========================================
     # ======= DATA WITH A KNOWN OUTPUT =======
@@ -85,7 +84,7 @@ def test_filter_scenario():
 # test each of the filters in succession simulating the output of each stage
 def test_all_filters():
     # load the list of bank loans
-    bank_data = load_csv(Path('data\daily_rate_sheet.csv'))
+    bank_data = load_csv(Path('../data/daily_rate_sheet.csv'))
     
     # ========================================
     # ======= DATA WITH A KNOWN OUTPUT =======
