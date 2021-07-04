@@ -43,7 +43,13 @@ def test_calculate_loan_to_value_ratio():
 
 # test to make sure all of the filters work together
 def test_filter_scenario():
+    # load the list of bank loans
     bank_data = load_csv(Path('data\daily_rate_sheet.csv'))
+    
+    # ========================================
+    # ======= DATA WITH A KNOWN OUTPUT =======
+    # ========================================
+    
     current_credit_score = 750
     debt = 1500
     income = 4000
@@ -53,9 +59,14 @@ def test_filter_scenario():
     monthly_debt_ratio = 0.375
     loan_to_value_ratio = 0.84
     
+    # run the 'find qualifying loans' function and set the filtered output to the 'qualifying_loans' list
     qualifying_loans = find_qualifying_loans(
         bank_data, current_credit_score, debt, income, loan, home_value)
     
+    # ========================================
+    # ==== GENERATE LIST OF KNOWN OUTPUT =====
+    # ========================================
+
     compare_against = []
     compare_against.append(['Bank of Big - Premier Option','300000','0.85','0.47','740','3.6'])
     compare_against.append(['Bank of Fintech - Premier Option','300000','0.9','0.47','740','3.15'])
@@ -64,6 +75,7 @@ def test_filter_scenario():
     compare_against.append(['FHA Fredie Mac - Starter Plus','300000','0.85','0.45','550','4.35'])
     compare_against.append(['iBank - Starter Plus','300000','0.9','0.4','620','3.9'])
 
+    # compare the test input to the known output
     assert qualifying_loans == compare_against
 
 # ========================================================
