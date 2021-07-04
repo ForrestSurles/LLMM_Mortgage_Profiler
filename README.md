@@ -1,41 +1,65 @@
-# Project Title
+# ~~~ LLMM Mortgage Profiler ~~~
 
-test
+Welcome to the **02_Module Challenge** script!
 
-Just after the title, introduce your project by describing attractively what the project is about and what is the main problem that inspires you to create this project or what is the main contribution for the potential user of your project.
+>This ___new___, and ***improved*** version includes everything <u>___you___</u> need to handle loan applications for `<company_name>` leveraging the **BRAND NEW** and *cutting edge* ***CSV*** file-type.<br><br>
+_'Need a loan to lean on???_<br><br>
+_Call_ <u>Lean Loan Mortgage Management</u> (or <u>LLM</u> for short!)<br>
+_to find out what you qualify for.. today!!!_
+
+This script, when activated from the `challenge` parent folder by entering the command:
+>`python app.py`
+
+into the command line, and the interactive script will execute.<br>
+<sup>_(at any time, you can press the key combination CTRL + C (control-c) to exit the script and return to the command line.)_</sup>
+
+The primary purpose of this script is to take in a list of potential loan products in the form of a csv file and based upon the user's input will filter the list of loans to show only those loans which the user *passes base qualifications*.<br><br>
+The aim is to provide a more automated experience to the mortgage banking officer in their day-to-day operations.
 
 ---
 
 ## Technologies
 
-Describe the technologies required to use your project such as programming languages, libraries, frameworks, and operating systems. Be sure to include the specific versions of any critical dependencies that you have used in the stable version of your project.
+This `python` based script utilizes the modules found in<br>
+> `requirements.txt`
 
 ---
 
 ## Installation Guide
 
-In this section, you should include detailed installation notes containing code blocks and screenshots.
+for each module found in `requirements.txt`, run:<br>
+> `pip install <module_name>=<version_number>`
+
+replacing each `<module_name>` and `<version_number>` with their respective entries.
 
 ---
 
 ## Examples
 
-This section should include screenshots, code blocks, or animations showing how your project works.
+example execution of the script:
+
+![example_run.jpg](example_run.jpg)
 
 ---
 
 ## Usage
 
-This section should include screenshots, code blocks, or animations explaining how to use your project.
+once the necessary files have been installed, and the script is called while the terminal is located in the parent directory `challenge`, with the command `python app.py`, the opportunity will be provided to save the script's generated output as a ***.csv*** file if the user inputs `Yes` during the appropriate prompt otherwise if the user inputs `No` the program will exit without saving the output data.
 
 ---
 
 ## Contributors
 
-In this section, list all the people who contribute to this project; since you may want to be reached by recruiters or potential collaborators, include your contact e-mail, and optionally your LinkedIn or Twitter profile.
+Forrest Surles
 
 ---
 
 ## License
 
-When you share a project on a repository, especially a public one, it's important to choose the right license to specify others what they can and can not do with your source code and files. Use this section to include the licence you want to use.
+Copyright 2021 - Forrest Surles
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
