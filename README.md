@@ -3,7 +3,7 @@
 Welcome to the **02_Module Challenge** script!
 
 >This ___new___, and ***improved*** version includes everything <u>___you___</u> need to handle loan applications for `<company_name>` leveraging the **BRAND NEW** and *cutting edge* ***CSV*** file-type.<br><br>
-_'Need a loan to lean on???_<br><br>
+_Need a loan to lean on???_<br><br>
 _Call_ <u>Lean Loan Mortgage Management</u> (or <u>LLMM</u> for short!) to find out what you qualify for.. today!!!_
 
 This script, when activated from the `challenge` parent folder by entering the command:
